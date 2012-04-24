@@ -1,0 +1,42 @@
+genplant version 0.3 - L-System plant renderer
+
+
+Compilation and usage
+==============================================================================
+genplant requires SDL, which is available as package for most
+distributions, but can also be downloaded as source at libsdl.org.
+Type 'make' to build, then './genplant' to run the program.
+See genplant -h for options.
+To use the VRML export feature, you could start genplant like this:
+./genplant > file.wrl
+Now when you press M to export to VRML, it gets written directly into the file.
+
+Background
+==============================================================================
+Comprehensive information about L-Systems can be found in the book
+"The algorithmic beauty of plants", which is available online:
+http://algorithmicbotany.org/papers/#abop
+
+Interesting patterns
+==============================================================================
+./genplant -s "F[+F]F[-F][F]"              # default plant
+./genplant -s "F[+F]F[-F]F"                # large slim plant
+./genplant -s "FF-[-F+F+F]+[+F-F-F]"       # bush-like plant
+
+./genplant -s "F[[-F]+F]F" -a 135 -x 9     # scifi arrow (at iteration >= 5)
+./genplant -s "FF[[-F]+F]" -a 90 -x 7      # demon skull (at iteration >= 6)
+./genplant -s "F-F+F+F-F" -a 120 -x 8      # almost sierpinski
+./genplant -s "F-F+F+F-FF" -a 90 -x 5      # irregular hill
+./genplant -s "F[F-F+FF-F]" -a 25 -x 9     # crippled sea-grass
+
+Known Bugs
+==============================================================================
+- Textual output of L-Systems overlap
+
+Author
+==============================================================================
+Andreas Textor <textor.andreas@googlemail.com>
+
+
+
+
